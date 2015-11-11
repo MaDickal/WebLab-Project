@@ -2,7 +2,6 @@
   require_once('../lib/db.interface.php');
   require_once('../lib/db.class.php');
   require_once('../models/flora.class.php');
-  require_once('../models/manager.abstract.php');
   require_once('../models/flora_manager.class.php');
 
 
@@ -16,14 +15,9 @@
       include('../views/submit.php');
       break;
 
-    // case 'Admin':
-    //   include('../views/flora_table.php');
-    //   break;
-    //
-     default:
-       $floraManager = new FloraManager();
-       $plants = $floraManager->getAllPlants();
-       include('../views/submit_form.php');
-       break;
+    default:
+      $floraManager = new FloraManager();
+      $plants = $floraManager->getAllPlants();       include('../views/submit_form.php');
+      break;
    }
  ?>

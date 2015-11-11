@@ -2,7 +2,6 @@
   require_once('../lib/db.interface.php');
   require_once('../lib/db.class.php');
   require_once('../models/flora.class.php');
-  require_once('../models/manager.abstract.php');
   require_once('../models/flora_manager.class.php');
 
   $floraManager = new FloraManager();
@@ -17,7 +16,7 @@
   $arr["notes"] = isset($_POST["notes"])?$_POST["notes"]:'';
   $plant = new Flora();
   $plant->Pollinate($arr);
-  $floraManager->save($plant);
+  $floraManager->_add($plant);
 
 ?>
 

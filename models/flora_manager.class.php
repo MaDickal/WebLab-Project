@@ -1,28 +1,25 @@
 <?php
 
-class FloraManager extends Manager{
+class FloraManager{
 
-  public function getAllPlants(){
+  // public function getAllPlants(){
+  //
+  //     $db = new Db();
+  //     $plants = array();
+  //
+  //     $results = $db -> select("SELECT * from flora");
+  //
+  //   foreach($results as $result){
+  //       $plant = new Flora();
+  //       $plant->pollinate($result);
+  //       $plants[] = $plant;
+  //     }
+  //
+  //     return $plants;
+  //
+  // }
 
-      $db = new Db();
-      $plants = array();
-
-      $results = $db -> select("SELECT * from flora");
-
-    foreach($results as $result){
-        $plant = new Flora();
-        $plant->pollinate($result);
-        $plants[] = $plant;
-      }
-
-      return $plants;
-
-  }
-  public function save($plant){
-      $this->_add($plant);
-  }
-
-  private function _add($plant){
+  public function _add($plant){
     $db = new Db();
 
     $fname = $db -> quote($plant->getfName());
