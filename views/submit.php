@@ -24,20 +24,37 @@
 <html>
 <header>
   <title>Thank you!</title>
+  <link rel="stylesheet" type="text/css" href="css/base.css">
 </header>
-<body>
+<body align=center>
   <h2>Thank you for your submission!</h2>
     <h4>The data you submitted is as follows:<br></h4>
-      <h5>
-      <label>Flora Name: <?= $_POST['fname']; ?></label><br>
-      <label>Soil Type: <?= $_POST['soil']; ?></label><br>
-      <label>Weather: <?= $_POST['weather']; ?></label><br>
-      <label>Location: <?= $_POST['location']; ?></label><br>
-      <label>Date: <?= $_POST['date']; ?></label><br>
-      <label>Time: <?= $_POST['time']; ?></label><br>
-      <label>Your Name: <?= $_POST['yname']; ?></label><br>
-      <label>Additional Notes: <?= $_POST['notes']; ?></label><br>
-    </h5>
+      <form>
+      <label>Flora Name:</label>
+      <h5><?= $arr['fname']; ?></h5>
+      <br>
+      <label>Soil Type:</label>
+      <h5><?= $arr['soil']; ?></h5>
+      <br>
+      <label>Weather:</label>
+      <h5><?= $arr['weather']; ?></h5>
+      <br>
+      <label>Location:</label>
+      <h5><?= $arr['location']; ?></h5>
+      <br>
+      <label>Date:</label>
+      <h5><?= $arr['date']; ?></h5>
+      <br>
+      <label>Time:</label>
+      <h5><?= $arr['time']; ?></h5>
+      <br>
+      <label>Your Name:</label>
+      <h5><?= $arr['yname']; ?></h5>
+      <br>
+      <label>Additional Notes:</label>
+      <h5><?= $arr['notes']; ?></h5>
+      <br>
+    </form>
 
       <a href='../webroot/CFR.php' class='button'>Submit Another</a>
 </body>

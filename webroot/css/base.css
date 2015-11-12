@@ -29,13 +29,40 @@ td{
 	padding:10px;
 }
 
+h5 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display:inline-block;
+  *display: inline;
+  zoom:1;
+  vertical-align:middle;
+  margin-left:15px
+
+}
 form input {
-    display: block;
-    margin-bottom: 1em;
-    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display:inline-block;
+    *display: inline;
+    zoom:1;
+    vertical-align:middle;
+    margin-left:20px
+}
+
+form select {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display:inline-block;
+    *display: inline;
+    zoom:1;
+    vertical-align:middle;
+    margin-left:20px;
+    width: 131px
 }
 
 form label {
-    float: left;
+    display: inline-block;
+    width: 115px;
+    text-align: right;
     margin-right: 0.5em;
-} 
+}
