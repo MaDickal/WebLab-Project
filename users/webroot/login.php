@@ -28,7 +28,6 @@ session_start();
         $user = $userManager->authenticate($mail, $pass);
 
         if($user) {
-          // include('../views/welcome.php');
           $thanks = 'Thank you for logging in!';
           include('../../formSelect.php');
           $_SESSION['current_user'] = $user;

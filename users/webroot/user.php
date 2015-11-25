@@ -39,7 +39,7 @@ else {
         case 'delete_user':
           $userManager = new UserManager();
           $userManager->delete($target);
-          header('Location: user.php');
+          // header('Location: user.php');
           break;
 
         case 'add_user':
@@ -58,9 +58,9 @@ else {
           $userManager = new UserManager();
           $arr = array();
           $arr["uid"] = isset($_GET["uid"])?$_GET["uid"]:'';
-          $arr["name"] = isset($_GET["name"])?$_GET["name"]:'';
           $arr["mail"] = isset($_GET["mail"])?$_GET["mail"]:'';
           $arr["pass"] = isset($_GET["pass"])?$_GET["pass"]:'';
+          $arr["admin"] = isset($_GET["admin"])?$_GET["admin"]:'';
           $user = new User();
           $user->hydrate($arr);
           $userManager->save($user);

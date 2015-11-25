@@ -19,7 +19,10 @@ require_once('lib/db.class.php');
 
 
     <h3><?= $thanks ?></h3>
-
+    <?php
+    if($user->getAdmin() == 'Yes'){?>
+    <a href='user.php' class='button'>View All Users</a>
+    <?php } ?>
     <a href='user.php?action=logout' class='button'>Log Out</a>
 
   </form>

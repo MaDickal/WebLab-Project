@@ -47,11 +47,14 @@ class UserManager extends Manager{
   private function _add($user){
     $db = new Db();
 
+    $pass = $_GET['pass'];
+
     $mail = $db -> quote($user->getMail());
     // $pass = password_hash($user->getPassword(), PASSWORD_BCRYPT, array("cost" => 10));
     $pass = $db -> quote($pass);
+    $admin = $db->quote($user->getAdmin());
 
-    $results = $db -> query("insert into users (mail, pass) values ($mail, $pass);");
+    $results = $db -> query("insert into users (mail, pass, admin) values ($mail, $pass, $admin);");
 
   }
 
@@ -60,6 +63,9 @@ class UserManager extends Manager{
 
     $uid = $db -> quote($user->getUID());
     $mail = $db -> quote($user->getMail());
+    $admin = $db->quote($user->getAdmin());
+
+    $pass = $_GET['pass'];
 
     if($user->getPassword()){
       // $pass = password_hash($user->getPassword(), PASSWORD_BCRYPT, array("cost" => 10));
@@ -69,9 +75,9 @@ class UserManager extends Manager{
     }
 
     if(!empty($pass)){
-      $results = $db -> query("update users set mail=$mail, pass=$pass where uid = $uid;");
+      $results = $db -> query("update users set mail=$mail, pass=$pass, admin=$admin where uid = $uid;");
     } else {
-      $results = $db -> query("update users set mail=$mail, pass=$pass where uid = $uid;");
+      $results = $db -> query("update users set mail=$mail, admin=$admin where uid = $uid;");
     }
 
   }
