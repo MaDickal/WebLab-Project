@@ -1,10 +1,10 @@
 <?php
-  require_once('../lib/db.interface.php');
-  require_once('../lib/db.class.php');
-  require_once('../models/flora.class.php');
-  require_once('../models/flora_manager.class.php');
+  require_once('../../lib/db.interface.php');
+  require_once('../../lib/db.class.php');
+  require_once('../models/birds.class.php');
+  require_once('../models/birds_manager.class.php');
 
-  $floraManager = new FloraManager();
+  $floraManager = new BirdsManager();
   $arr = array();
   $arr["fname"] = isset($_POST["fname"])?$_POST["fname"]:'';
   $arr["soil"] = isset($_POST["soil"])?$_POST["soil"]:'';
@@ -14,7 +14,7 @@
   $arr["time"] = isset($_POST["time"])?$_POST["time"]:'';
   $arr["yname"] = isset($_POST["yname"])?$_POST["yname"]:'';
   $arr["notes"] = isset($_POST["notes"])?$_POST["notes"]:'';
-  $plant = new Flora();
+  $plant = new Birds();
   $plant->Pollinate($arr);
   $floraManager->_add($plant);
 
@@ -24,7 +24,7 @@
 <html>
 <header>
   <title>Thank you!</title>
-  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="../../css/base.css">
 </header>
 <body align=center>
   <h2>Thank you for your submission!</h2>

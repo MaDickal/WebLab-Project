@@ -1,6 +1,6 @@
 <?php
 
-class FloraManager{
+class BirdsManager{
 
   // public function getAllPlants(){
   //

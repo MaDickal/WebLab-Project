@@ -40,11 +40,11 @@
 ?>
 <html>
   <header>
-    <title>Colorado Flora Retriever</title>
-    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <title>Colorado Aerial Wildlife</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
   </header>
   <body align=center>
-    <h1>Colorado Flora Retriever</h1>
+    <h1>Colorado Aerial Wildlife</h1>
     <form method="POST">
       <input type="hidden" name="action" value="save_flora">
 
@@ -71,7 +71,7 @@
 
       <label for="notes">Additional Notes:</label>
       <input type="text" name="notes" /><br>
-      
+
       <input type="submit" value="Submit" class="button"/><br>
 
     </form>

@@ -1,8 +1,8 @@
 <?php
-  require_once('../lib/db.interface.php');
-  require_once('../lib/db.class.php');
-  require_once('../models/flora.class.php');
-  require_once('../models/flora_manager.class.php');
+  require_once('../../lib/db.interface.php');
+  require_once('../../lib/db.class.php');
+  require_once('../models/birds.class.php');
+  require_once('../models/birds_manager.class.php');
 
 
   $action = isset($_POST["action"])?$_POST["action"]:'';
