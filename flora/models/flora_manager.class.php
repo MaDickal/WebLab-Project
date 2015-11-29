@@ -29,9 +29,9 @@ class FloraManager{
     $time = $db -> quote($plant->getTime());
     $yname = $db -> quote($plant->getyName());
     $notes = $db -> quote($plant->getNotes());
+    $uid = $db->quote($plant->getUID());
 
-
-    $results = $db -> query("insert into flora (fname, soil, weather, location, date, time, yname, notes, users_uid) values ($fname, $soil, $weather, $location, $date, $time, $yname, $notes, ###);");
+    $results = $db -> query("insert into flora (fname, soil, weather, location, date, time, yname, notes, users_uid) values ($fname, $soil, $weather, $location, $date, $time, $yname, $notes, $uid);");
 
   }
 }

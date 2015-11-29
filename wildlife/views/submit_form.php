@@ -1,5 +1,5 @@
 <?php
-    $soilArray = ['Sand', 'Silt', 'Clay', 'Loam', 'Peat', 'Gravel', 'Rocky'];
+    $genderArray = ['Male', 'Female', 'Unknown'];
 
     class selectMenu {
         private $items;  // array of items.
@@ -11,7 +11,7 @@
         }
 
         private function buildOptions() {
-            $this->options = "<option value=''>Select a Soil</option>";
+            $this->options = "<option value=''>Select a Gender</option>";
             forEach($this->items as $item) {
                 $this->options .= "<option value='"
                 . $item . "'>"
@@ -20,7 +20,7 @@
         }
 
         private function buildSelect() {
-            $this->selectMenu = "<select name='soil'>" . $this->options . "</select>";
+            $this->selectMenu = "<select name='gender'>" . $this->options . "</select>";
         }
 
         public function setOptions($array) {
@@ -34,8 +34,8 @@
         }
     }
 
-    $soilMenu = new selectMenu;
-    $soilMenu->setOptions($soilArray);
+    $genderMenu = new selectMenu;
+    $genderMenu->setOptions($genderArray);
 
 ?>
 <html>
@@ -46,13 +46,13 @@
   <body align=center>
     <h1>Colorado Aerial Wildlife</h1>
     <form method="POST">
-      <input type="hidden" name="action" value="save_flora">
+      <input type="hidden" name="action" value="save_bird">
 
-      <label for="fname">Flora Name:</label>
-      <input type="text" name="fname" required/><br>
+      <label for="bname">Bird Name:</label>
+      <input type="text" name="bname" required/><br>
 
-      <label for="soil">Soil Type:</label>
-      <?php echo $soilMenu->makeMenu(); ?><br>
+      <label for="gender">Gender:</label>
+      <?php echo $genderMenu->makeMenu(); ?><br>
 
       <label for="weather">Weather:</label>
       <input type="text" name="weather" /><br>

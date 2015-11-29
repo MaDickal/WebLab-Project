@@ -2,20 +2,25 @@
 
 class Birds{
 
-  private $_fname;
-  private $_soil;
+  private $_bid;
+  private $_bname;
+  private $_gender;
   private $_weather;
   private $_location;
   private $_date;
   private $_time;
   private $_yname;
   private $_notes;
+  private $_uid;
 
-  public function getfName(){return $this->_fname;}
-  public function setfName($arg){$this->_fname = $arg;}
+  public function getBID(){return $this->_bid;}
+  public function setBID($arg){$this->_bid = $arg;}
 
-  public function getSoil(){return $this->_soil;}
-  public function setSoil($arg){$this->_soil = $arg;}
+  public function getbName(){return $this->_bname;}
+  public function setbName($arg){$this->_bname = $arg;}
+
+  public function getGender(){return $this->_gender;}
+  public function setGender($arg){$this->_gender = $arg;}
 
   public function getWeather(){return $this->_weather;}
   public function setWeather($arg){$this->_weather = $arg;}
@@ -35,16 +40,20 @@ class Birds{
   public function getNotes(){return $this->_notes;}
   public function setNotes($arg){$this->_notes = $arg;}
 
+  public function getUID(){return $this->_uid;}
+  public function setUID($arg){$this->_uid = $arg;}
+
   public function Ascend($arr) {
-    $this->setfName(isset($arr["fname"])?$arr["fname"]:'');
-    $this->setSoil(isset($arr["soil"])?$arr["soil"]:'');
+    $this->setBID(isset($arr["id"])?$arr["id"]:'');
+    $this->setbName(isset($arr["bname"])?$arr["bname"]:'');
+    $this->setGender(isset($arr["gender"])?$arr["gender"]:'');
     $this->setWeather(isset($arr["weather"])?$arr["weather"]:'');
     $this->setLocation(isset($arr["location"])?$arr["location"]:'');
     $this->setDate(isset($arr["date"])?$arr["date"]:'');
     $this->setTime(isset($arr["time"])?$arr["time"]:'');
     $this->setyName(isset($arr["yname"])?$arr["yname"]:'');
     $this->setNotes(isset($arr["notes"])?$arr["notes"]:'');
-
+    $this->setUID(isset($arr["users_uid"])?$arr["users_uid"]:'');
   }
 
 }

@@ -19,20 +19,20 @@ class BirdsManager{
   //
   // }
 
-  public function _add($plant){
+  public function _add($bird){
     $db = new Db();
 
-    $fname = $db -> quote($plant->getfName());
-    $soil = $db -> quote($plant->getSoil());
-    $weather = $db -> quote($plant->getWeather());
-    $location = $db -> quote($plant->getLocation());
-    $date = $db -> quote($plant->getDate());
-    $time = $db -> quote($plant->getTime());
-    $yname = $db -> quote($plant->getyName());
-    $notes = $db -> quote($plant->getNotes());
+    $bname = $db -> quote($bird->getbName());
+    $gender = $db -> quote($bird->getGender());
+    $weather = $db -> quote($bird->getWeather());
+    $location = $db -> quote($bird->getLocation());
+    $date = $db -> quote($bird->getDate());
+    $time = $db -> quote($bird->getTime());
+    $yname = $db -> quote($bird->getyName());
+    $notes = $db -> quote($bird->getNotes());
+    $uid = $db->quote($plant->getUID());
 
-
-    $results = $db -> query("insert into flora (fname, soil, weather, location, date, time, yname, notes) values ($fname, $soil, $weather, $location, $date, $time, $yname, $notes);");
+    $results = $db -> query("insert into birds (bname, gender, weather, location, date, time, yname, notes, users_uid) values ($bname, $gender, $weather, $location, $date, $time, $yname, $notes, $uid);");
 
   }
 }
