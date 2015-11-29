@@ -2,6 +2,7 @@
 
 class Flora{
 
+  private $_fid;
   private $_fname;
   private $_soil;
   private $_weather;
@@ -10,6 +11,10 @@ class Flora{
   private $_time;
   private $_yname;
   private $_notes;
+  private $_uid;
+
+  public function getFID(){return $this->_fid;}
+  public function setFID($arg){$this->_fid = $arg;}
 
   public function getfName(){return $this->_fname;}
   public function setfName($arg){$this->_fname = $arg;}
@@ -35,7 +40,11 @@ class Flora{
   public function getNotes(){return $this->_notes;}
   public function setNotes($arg){$this->_notes = $arg;}
 
+  public function getUID(){return $this->_uid;}
+  public function setUID($arg){$this->_uid = $arg;}
+
   public function Pollinate($arr) {
+    $this->setFID(isset($arr["id"])?$arr["id"]:'');
     $this->setfName(isset($arr["fname"])?$arr["fname"]:'');
     $this->setSoil(isset($arr["soil"])?$arr["soil"]:'');
     $this->setWeather(isset($arr["weather"])?$arr["weather"]:'');
@@ -44,6 +53,8 @@ class Flora{
     $this->setTime(isset($arr["time"])?$arr["time"]:'');
     $this->setyName(isset($arr["yname"])?$arr["yname"]:'');
     $this->setNotes(isset($arr["notes"])?$arr["notes"]:'');
+    $this->setUID(isset($arr["users_uid"])?$arr["users_uid"]:'');
+
 
   }
 

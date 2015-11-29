@@ -2,22 +2,21 @@
 
 class FloraManager{
 
-  // public function getAllPlants(){
-  //
-  //     $db = new Db();
-  //     $plants = array();
-  //
-  //     $results = $db -> select("SELECT * from flora");
-  //
-  //   foreach($results as $result){
-  //       $plant = new Flora();
-  //       $plant->pollinate($result);
-  //       $plants[] = $plant;
-  //     }
-  //
-  //     return $plants;
-  //
-  // }
+  public function getAllFlora(){
+
+      $db = new Db();
+      $plants = array();
+
+      $results = $db -> select("SELECT * from flora");
+
+    foreach($results as $result){
+        $plant = new Flora();
+        $plant->Pollinate($result);
+        $plants[] = $plant;
+      }
+      return $plants;
+
+  }
 
   public function _add($plant){
     $db = new Db();

@@ -22,7 +22,11 @@ require_once('lib/db.class.php');
     <?php
     if($user->getAdmin() == 'Yes'){?>
     <a href='user.php' class='button'>View All Users</a>
+    <a href='../../data/views/data.php' class='button'>View All Data</a>
     <?php } ?>
+    <br>
+    <br>
+    <br>
     <a href='user.php?action=logout' class='button'>Log Out</a>
 
   </form>
