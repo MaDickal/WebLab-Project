@@ -10,7 +10,7 @@ $title = 'Colorado Repository';
 session_start();
 
 if(!isset($_SESSION['current_user'])) {
-  header('Location: login.php');
+  header('Location: ../webroot/login.php');
 }
 else {
   $current_user = $_SESSION['current_user'];
@@ -32,7 +32,7 @@ else {
 <body align=center>
   <h1>Colorado Repository</h1>
 
-  <form action="formDirect.php" method="POST" class="form-horizontal">
+  <form action="../webroot/formDirect.php" method="POST" class="form-horizontal">
     <div class="form-group">
       <div class="row">
         <label class="radio-inline"><input type="radio" name="form" value="Flora">Flora</label>
