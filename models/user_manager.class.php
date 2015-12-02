@@ -47,12 +47,11 @@ class UserManager extends Manager{
   private function _add($user){
     $db = new Db();
 
-    $pass = $_GET['pass'];
-
     $mail = $db -> quote($user->getMail());
+    $pass = $db -> quote($user->getPassword());
+    $admin = $db -> quote($user->getAdmin());
     // $pass = password_hash($user->getPassword(), PASSWORD_BCRYPT, array("cost" => 10));
-    $pass = $db -> quote($pass);
-    $admin = $db->quote($user->getAdmin());
+    // $pass = $db -> quote($pass);
 
     $results = $db -> query("insert into users (mail, pass, admin) values ($mail, $pass, $admin);");
 
@@ -63,16 +62,15 @@ class UserManager extends Manager{
 
     $uid = $db -> quote($user->getUID());
     $mail = $db -> quote($user->getMail());
-    $admin = $db->quote($user->getAdmin());
+    $pass = $db -> quote($user->getPassword());
+    $admin = $db -> quote($user->getAdmin());
 
-    $pass = $_GET['pass'];
-
-    if($user->getPassword()){
-      // $pass = password_hash($user->getPassword(), PASSWORD_BCRYPT, array("cost" => 10));
-      $pass = $db -> quote($pass);
-    } else {
-      $pass = '';
-    }
+    // if($user->getPassword()){
+    //   $pass = password_hash($user->getPassword(), PASSWORD_BCRYPT, array("cost" => 10));
+    //   $pass = $db -> quote($pass);
+    // } else {
+    //   $pass = '';
+    // }
 
     if(!empty($pass)){
       $results = $db -> query("update users set mail=$mail, pass=$pass, admin=$admin where uid = $uid;");
@@ -92,13 +90,13 @@ class UserManager extends Manager{
       $results = $db -> query("DELETE from users where uid = $uid");
   }
 
-  public function authenticate($mail, $pass) {
+  public function authenticate($username, $password) {
 	  $db = new Db();
 
-	  $mail = $db->quote($mail);
-	  $pass = $db->quote($pass);
+	  $username = $db->quote($username);
+	  $password = $db->quote($password);
 
-	  $results = $db->select("SELECT * from users where mail = $mail limit 1");
+	  $results = $db->select("SELECT * from users where mail = $username limit 1");
 
 	  if(!$results) {
 		  return false;
@@ -107,7 +105,7 @@ class UserManager extends Manager{
 		  $user = new User();
 		  $user->hydrate($result);
 	  }
-    // if(password_verify($pass, $user->getPassword())) {
+    // if(password_verify($password, $user->getPassword())) {
     //   return $user;
     // } else {
     //   return FALSE;
