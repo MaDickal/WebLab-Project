@@ -48,10 +48,9 @@ class UserManager extends Manager{
     $db = new Db();
 
     $mail = $db -> quote($user->getMail());
-    $pass = $db -> quote($user->getPassword());
     $admin = $db -> quote($user->getAdmin());
-    // $pass = password_hash($user->getPassword(), PASSWORD_BCRYPT, array("cost" => 10));
-    // $pass = $db -> quote($pass);
+    $pass = password_hash($user->getPassword(), PASSWORD_BCRYPT, array("cost" => 10));
+    $pass = $db -> quote($pass);
 
     $results = $db -> query("insert into users (mail, pass, admin) values ($mail, $pass, $admin);");
 
@@ -62,15 +61,14 @@ class UserManager extends Manager{
 
     $uid = $db -> quote($user->getUID());
     $mail = $db -> quote($user->getMail());
-    $pass = $db -> quote($user->getPassword());
     $admin = $db -> quote($user->getAdmin());
 
-    // if($user->getPassword()){
-    //   $pass = password_hash($user->getPassword(), PASSWORD_BCRYPT, array("cost" => 10));
-    //   $pass = $db -> quote($pass);
-    // } else {
-    //   $pass = '';
-    // }
+    if($user->getPassword()){
+      $pass = password_hash($user->getPassword(), PASSWORD_BCRYPT, array("cost" => 10));
+      $pass = $db -> quote($pass);
+    } else {
+      $pass = '';
+    }
 
     if(!empty($pass)){
       $results = $db -> query("update users set mail=$mail, pass=$pass, admin=$admin where uid = $uid;");
@@ -94,7 +92,6 @@ class UserManager extends Manager{
 	  $db = new Db();
 
 	  $username = $db->quote($username);
-	  $password = $db->quote($password);
 
 	  $results = $db->select("SELECT * from users where mail = $username limit 1");
 
@@ -105,12 +102,11 @@ class UserManager extends Manager{
 		  $user = new User();
 		  $user->hydrate($result);
 	  }
-    // if(password_verify($password, $user->getPassword())) {
-    //   return $user;
-    // } else {
-    //   return FALSE;
-    // }
-	  return $user;
+    if(password_verify($password, $user->getPassword())) {
+      return $user;
+    } else {
+      return FALSE;
+    }
   }
 
 }
