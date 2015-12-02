@@ -1,3 +1,3 @@
-<h2>You are now logged out</h2>
+<h3>You are now logged out</h3>
 
-<a href="login.php" class="button2">Login</a>
+<a href="login.php" class="btn btn-primary">Login</a>

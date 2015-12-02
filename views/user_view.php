@@ -54,12 +54,7 @@
   </div>
 </table>
 <br>
-  |
-  <a href='user.php?action=delete_user&target=<?= $user->getUID() ?>' class='button'>Delete This User</a>
-  |
-  <a href='user.php?action=edit_user&target=<?= $user->getUID() ?>' class='button'>Edit This User</a>
-  |
+  <a href='user.php?action=edit_user&target=<?= $user->getUID() ?>' class="btn btn-warning">Edit This User</a>
+  <a href='user.php?action=delete_user&target=<?= $user->getUID() ?>' class="btn btn-danger">Delete This User</a>
   <br>
-  |
-  <a href='user.php' class='button2'>View All Users</a>
-  |
+  <a href='user.php' class="btn btn-primary">View All Users</a>

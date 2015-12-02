@@ -9,5 +9,5 @@
     <option value="No">No</option>
     <option value="Yes">Yes</option>
   </select><br>
-  <input type="submit" value="Save"  class='button'>
+  <input type="submit" value="Save"  class="btn btn-primary">
 </form>
