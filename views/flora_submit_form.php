@@ -36,7 +36,6 @@
 
     $soilMenu = new selectMenu;
     $soilMenu->setOptions($soilArray);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
