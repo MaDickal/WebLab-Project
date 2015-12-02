@@ -1,8 +1,6 @@
 <?php $title = 'All Users'; ?>
 <div class="container">
-  <div class="page-header">
     <h3><?= $title ?></h3>
-  </div>
 <div class="table-bordered">
   <div class="table-responsive">
     <table class="table table-striped">

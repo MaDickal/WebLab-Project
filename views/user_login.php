@@ -8,17 +8,17 @@ foreach($error_msg as $err) {
     <div class="form-group">
       <div class="row">
         <label for="mail" class="col-xs-4 control-label text-right">Email:</label>
-          <div class="col-xs-4">
-            <input type="text" class="form-control" name="mail" placeholder="Email" value="<?= $username ?>" required>
-          </div>
+        <div class="col-xs-4">
+          <input type="text" class="form-control" name="mail" placeholder="Email" value="<?= $username ?>" required>
+        </div>
       </div>
     </div>
     <div class="form-group">
       <div class="row">
         <label for="pass" class="col-xs-4 control-label text-right">Password:</label>
-          <div class="col-xs-4">
-            <input type="password" class="form-control" name="pass" placeholder="Password" value="<?= $password ?>" pattern=".{1,50}" title="between 1 and 50 characters -_-" required>
-          </div>
+        <div class="col-xs-4">
+          <input type="password" class="form-control" name="pass" placeholder="Password" value="<?= $password ?>" pattern=".{1,50}" title="between 1 and 50 characters -_-" required>
+        </div>
       </div>
     </div>
     <div class="form-group">

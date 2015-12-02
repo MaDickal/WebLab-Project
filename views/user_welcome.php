@@ -1,5 +1,7 @@
 <h2>You are now logged in</h2>
 
+<a href='../views/formSelect.php' class="btn btn-success">Submit Data</a>
+<br>
 <?php if($user->getAdmin() == 'Yes'){?>
 <a href="user.php" class="btn btn-primary">View All Users</a>
 <br>
