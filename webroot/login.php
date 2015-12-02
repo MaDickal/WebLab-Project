@@ -53,6 +53,25 @@ $title = 'Colorado Repository'
             }
             break;
 
+          case 'register':
+            $userManager = new UserManager();
+            $user = new User();
+            include('../views/user_register.php');
+            break;
+
+          case 'save_user':
+            $userManager = new UserManager();
+            $arr = array();
+            $arr["uid"] = isset($_POST["uid"])?$_POST["uid"]:'';
+            $arr["mail"] = isset($_POST["mail"])?$_POST["mail"]:'';
+            $arr["pass"] = isset($_POST["pass"])?$_POST["pass"]:'';
+            $arr["admin"] = isset($_POST["admin"])?$_POST["admin"]:'';
+            $user = new User();
+            $user->hydrate($arr);
+            $userManager->save($user);
+            include('../views/user_saved.php');
+            break;
+
           default:
             include('../views/user_login.php');
             break;

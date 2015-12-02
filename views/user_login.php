@@ -24,8 +24,16 @@ foreach($error_msg as $err) {
     <div class="form-group">
       <div class="row">
         <div class="col-xs-12">
-          <input type="submit" value="Login" class="btn btn-primary">
+          <input type="submit" value="Login" class="btn btn-success">
         </div>
+      </div>
+    </div>
+  </form>
+  <form name="register" action="login.php" method="post" class="form-horizontal">
+    <input type="hidden" name="action" value="register">
+    <div class="form-group">
+      <div class="row">
+        <input type="submit" value="Register" class="btn btn-primary">
       </div>
     </div>
   </form>
