@@ -1,7 +1,7 @@
 <?php
-    $soilArray = ['Sand', 'Silt', 'Clay', 'Loam', 'Peat', 'Gravel', 'Rocky'];
+    $genderArray = ['Unknown', 'Male', 'Female'];
 
-    $title = 'Colorado Flora Retriever';
+    $title = 'Colorado Aerial Wildlife';
 
     class selectMenu {
         private $items;  // array of items.
@@ -13,7 +13,7 @@
         }
 
         private function buildOptions() {
-          $this->options = "<option value=''>Select a Soil</option>";
+          $this->options = "<option value=''>Select a Gender</option>";
             forEach($this->items as $item) {
                 $this->options .= "<option value='"
                 . $item . "'>"
@@ -22,7 +22,7 @@
         }
 
         private function buildSelect() {
-            $this->selectMenu = "<select class='form-control' name='soil'>" . $this->options . "</select>";
+            $this->selectMenu = "<select class='form-control' name='gender'>" . $this->options . "</select>";
         }
 
         public function setOptions($array) {
@@ -36,8 +36,8 @@
         }
     }
 
-    $soilMenu = new selectMenu;
-    $soilMenu->setOptions($soilArray);
+    $genderMenu = new selectMenu;
+    $genderMenu->setOptions($genderArray);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,20 +53,20 @@
   <body align=center>
     <h1><?= $title ?></h1>
     <form method="POST" class="form-horizontal">
-      <input type="hidden" name="action" value="save_flora">
+      <input type="hidden" name="action" value="save_bird">
       <div class="form-group">
         <div class="row">
-          <label for="fname" class="col-xs-4 control-label text-right">Flora Name:</label>
+          <label for="bname" class="col-xs-4 control-label text-right">Bird Name:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="fname" placeholder="Flora Name" required/><br>
+            <input type="text" class="form-control" name="bname" placeholder="Bird Name" required/><br>
           </div>
         </div>
       </div>
       <div class="form-group">
         <div class="row">
-          <label for="soil" class="col-xs-4 control-label text-right">Soil Type:</label>
+          <label for="gender" class="col-xs-4 control-label text-right">Gender:</label>
           <div class="col-xs-4">
-            <?php echo $soilMenu->makeMenu(); ?><br>
+            <?php echo $genderMenu->makeMenu(); ?><br>
           </div>
         </div>
       </div>

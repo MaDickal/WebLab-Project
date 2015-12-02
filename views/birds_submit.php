@@ -1,14 +1,14 @@
 <?php
   require_once('../lib/db.interface.php');
   require_once('../lib/db.class.php');
-  require_once('../models/flora.class.php');
-  require_once('../models/flora_manager.class.php');
+  require_once('../models/birds.class.php');
+  require_once('../models/birds_manager.class.php');
   require_once('../models/user.class.php');
 
-  $floraManager = new FloraManager();
+  $birdsManager = new BirdsManager();
   $arr = array();
-  $arr["fname"] = isset($_POST["fname"])?$_POST["fname"]:'';
-  $arr["soil"] = isset($_POST["soil"])?$_POST["soil"]:'';
+  $arr["bname"] = isset($_POST["bname"])?$_POST["bname"]:'';
+  $arr["gender"] = isset($_POST["gender"])?$_POST["gender"]:'';
   $arr["weather"] = isset($_POST["weather"])?$_POST["weather"]:'';
   $arr["location"] = isset($_POST["location"])?$_POST["location"]:'';
   $arr["date"] = isset($_POST["date"])?$_POST["date"]:'';
@@ -16,9 +16,9 @@
   $arr["yname"] = isset($_POST["yname"])?$_POST["yname"]:'';
   $arr["notes"] = isset($_POST["notes"])?$_POST["notes"]:'';
   $arr["users_uid"] = isset($_SESSION["current_user"])?$_SESSION["current_user"]->getUID():'';
-  $plant = new Flora();
-  $plant->Pollinate($arr);
-  $floraManager->_add($plant);
+  $bird = new Bird();
+  $bird->Ascend($arr);
+  $birdsManager->_add($bird);
 
 ?>
 
@@ -43,10 +43,10 @@
         <div class="col-xs-3">
         </div>
         <div class="col-xs-3" align=right>
-          <b>Flora Name:</b>
+          <b>Bird Name:</b>
         </div>
         <div class="col-xs-3" align=left>
-          <?= $arr['fname']; ?>
+          <?= $arr['bname']; ?>
         </div>
         <div class="col-xs-3">
         </div>
@@ -55,10 +55,10 @@
         <div class="col-xs-3">
         </div>
         <div class="col-xs-3" align=right>
-          <b>Soil Type:</b>
+          <b>Gender:</b>
         </div>
         <div class="col-xs-3" align=left>
-          <?= $arr['soil']; ?>
+          <?= $arr['gender']; ?>
         </div>
         <div class="col-xs-3">
         </div>
