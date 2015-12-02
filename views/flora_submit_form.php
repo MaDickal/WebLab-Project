@@ -20,7 +20,7 @@
         }
 
         private function buildSelect() {
-            $this->selectMenu = "<select name='soil'>" . $this->options . "</select>";
+            $this->selectMenu = "<select class='form-control' name='soil'>" . $this->options . "</select>";
         }
 
         public function setOptions($array) {
@@ -57,7 +57,7 @@
         <div class="row">
           <label for="fname" class="col-xs-4 control-label text-right">Flora Name:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="fname" required/><br>
+            <input type="text" class="form-control" name="fname" placeholder="Flora Name" required/><br>
           </div>
         </div>
       </div>
@@ -65,9 +65,7 @@
         <div class="row">
           <label for="soil" class="col-xs-4 control-label text-right">Soil Type:</label>
           <div class="col-xs-4">
-            <div class="btn-group" role="group">
-              <?php echo $soilMenu->makeMenu(); ?><br>
-            </div>
+            <?php echo $soilMenu->makeMenu(); ?><br>
           </div>
         </div>
       </div>
@@ -75,7 +73,7 @@
         <div class="row">
           <label for="weather" class="col-xs-4 control-label text-right">Weather:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="weather" /><br>
+            <input type="text" class="form-control" name="weather" placeholder="Weather"/><br>
           </div>
         </div>
       </div>
@@ -83,7 +81,7 @@
         <div class="row">
           <label for="location" class="col-xs-4 control-label text-right">Location:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="location" /><br>
+            <input type="text" class="form-control" name="location" placeholder="Location"/><br>
           </div>
         </div>
       </div>
@@ -91,7 +89,7 @@
         <div class="row">
           <label for="date" class="col-xs-4 control-label text-right">Date:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="date" /><br>
+            <input type="text" class="form-control" name="date" placeholder="Date"/><br>
           </div>
         </div>
       </div>
@@ -99,7 +97,7 @@
         <div class="row">
           <label for="time" class="col-xs-4 control-label text-right">Time:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="time" /><br>
+            <input type="text" class="form-control" name="time" placeholder="Time"/><br>
           </div>
         </div>
       </div>
@@ -107,7 +105,7 @@
         <div class="row">
           <label for="yname" class="col-xs-4 control-label text-right">Your Name:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="yname" /><br>
+            <input type="text" class="form-control" name="yname" placeholder="Your Name (Optional)"/><br>
           </div>
         </div>
       </div>
@@ -115,13 +113,11 @@
         <div class="row">
           <label for="notes" class="col-xs-4 control-label text-right">Additional Notes:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="notes" /><br>
+            <input type="text" class="form-control" name="notes" placeholder="Additional Notes (Optional)"/><br>
           </div>
         </div>
       </div>
       <input type="submit" value="Submit" class="btn btn-success"/><br>
     </form>
-
-
   </body>
 </html>
