@@ -5,7 +5,7 @@
 <?php if($user->getAdmin() == 'Yes'){?>
 <br>
 <a href="user.php" class="btn btn-primary">View All Users</a>
-<a href="data.php" class="btn btn-primary">View All Data</a>
+<a href="data_formDirect.php" class="btn btn-primary">View All Data</a>
 <br>
 <?php } ?>
 <br>

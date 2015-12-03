@@ -18,6 +18,24 @@ class FloraManager{
 
   }
 
+  public function getFlora($arg){
+
+    if(!is_numeric($arg)) return FALSE;
+
+      $db = new Db();
+
+      $fid = $db -> quote($arg);
+      $results = $db -> select("SELECT * from flora where id = $fid limit 1");
+
+      foreach($results as $result){
+          $plant = new Flora();
+          $plant->Pollinate($result);
+      }
+
+      return $plant;
+
+  }
+
   public function _add($plant){
     $db = new Db();
 
