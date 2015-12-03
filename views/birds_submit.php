@@ -7,12 +7,13 @@
 
   $birdsManager = new BirdsManager();
   $arr = array();
-  $arr["bname"] = isset($_POST["bname"])?$_POST["bname"]:'';
+  $arr["species"] = isset($_POST["species"])?$_POST["species"]:'';
   $arr["gender"] = isset($_POST["gender"])?$_POST["gender"]:'';
-  $arr["weather"] = isset($_POST["weather"])?$_POST["weather"]:'';
-  $arr["location"] = isset($_POST["location"])?$_POST["location"]:'';
-  $arr["date"] = isset($_POST["date"])?$_POST["date"]:'';
-  $arr["time"] = isset($_POST["time"])?$_POST["time"]:'';
+  $arr["distance"] = isset($_POST["distance"])?$_POST["distance"]:'';
+  $arr["detected"] = isset($_POST["detected"])?$_POST["detected"]:'';
+  $arr["migrant"] = isset($_POST["migrant"])?$_POST["migrant"]:'';
+  $arr["nest"] = isset($_POST["nest"])?$_POST["nest"]:'';
+  $arr["eggs"] = isset($_POST["eggs"])?$_POST["eggs"]:'';
   $arr["yname"] = isset($_POST["yname"])?$_POST["yname"]:'';
   $arr["notes"] = isset($_POST["notes"])?$_POST["notes"]:'';
   $arr["users_uid"] = isset($_SESSION["current_user"])?$_SESSION["current_user"]->getUID():'';
@@ -43,10 +44,10 @@
         <div class="col-xs-3">
         </div>
         <div class="col-xs-3" align=right>
-          <b>Bird Name:</b>
+          <b>Bird Species:</b>
         </div>
         <div class="col-xs-3" align=left>
-          <?= $arr['bname']; ?>
+          <?= $arr['species']; ?>
         </div>
         <div class="col-xs-3">
         </div>
@@ -67,10 +68,10 @@
         <div class="col-xs-3">
         </div>
         <div class="col-xs-3" align=right>
-          <b>Weather:</b>
+          <b>Distance:</b>
         </div>
         <div class="col-xs-3" align=left>
-          <?= $arr['weather']; ?>
+          <?= $arr['distance']; ?>
         </div>
         <div class="col-xs-3">
         </div>
@@ -79,10 +80,10 @@
         <div class="col-xs-3">
         </div>
         <div class="col-xs-3" align=right>
-          <b>Location:</b>
+          <b>How was it detected:</b>
         </div>
         <div class="col-xs-3" align=left>
-          <?= $arr['location']; ?>
+          <?= $arr['detected']; ?>
         </div>
         <div class="col-xs-3">
         </div>
@@ -91,10 +92,10 @@
         <div class="col-xs-3">
         </div>
         <div class="col-xs-3" align=right>
-          <b>Date:</b>
+          <b>Migrant:</b>
         </div>
         <div class="col-xs-3" align=left>
-          <?= $arr['date']; ?>
+          <?= $arr['migrant']; ?>
         </div>
         <div class="col-xs-3">
         </div>
@@ -103,10 +104,22 @@
         <div class="col-xs-3">
         </div>
         <div class="col-xs-3" align=right>
-          <b>Time:</b>
+          <b>Did you observe a nest:</b>
         </div>
         <div class="col-xs-3" align=left>
-          <?= $arr['time']; ?>
+          <?= $arr['nest']; ?>
+        </div>
+        <div class="col-xs-3">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-3" align=right>
+          <b>How many eggs were in the nest:</b>
+        </div>
+        <div class="col-xs-3" align=left>
+          <?= $arr['eggs']; ?>
         </div>
         <div class="col-xs-3">
         </div>

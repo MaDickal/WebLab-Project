@@ -4,7 +4,6 @@
 <br>
 <?php if($user->getAdmin() == 'Yes'){?>
 <br>
-Admin Fancy Stuff ->
 <a href="user.php" class="btn btn-primary">View All Users</a>
 <a href="data.php" class="btn btn-primary">View All Data</a>
 <br>

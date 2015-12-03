@@ -4,15 +4,12 @@
 
 session_start();
 
-if(!isset($_SESSION['current_user'])) {
-  header('Location: login.php');
-}
-else {
+if(isset($_SESSION['current_user'])) {
   $current_user = $_SESSION['current_user'];
-}
+  if($current_user->getAdmin() == 'Yes'){?>
 
-if($current_user->getAdmin() == 'Yes'){?>
+
 <a href="user.php" class="btn btn-primary">View All Users</a>
 <br>
-<?php } ?>
+<?php }} ?>
 <a href="login.php" class="btn btn-primary">Login</a>

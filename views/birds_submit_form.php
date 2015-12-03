@@ -56,9 +56,9 @@
       <input type="hidden" name="action" value="save_bird">
       <div class="form-group">
         <div class="row">
-          <label for="bname" class="col-xs-4 control-label text-right">Bird Name:</label>
+          <label for="species" class="col-xs-4 control-label text-right">Bird Species:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="bname" placeholder="Bird Name" required/><br>
+            <input type="text" class="form-control" name="species" placeholder="Bird Species" required/><br>
           </div>
         </div>
       </div>
@@ -72,33 +72,50 @@
       </div>
       <div class="form-group">
         <div class="row">
-          <label for="weather" class="col-xs-4 control-label text-right">Weather:</label>
+          <label for="distance" class="col-xs-4 control-label text-right">Distance:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="weather" placeholder="Weather"/><br>
+            <input type="text" class="form-control" name="distance" placeholder="Distance"/><br>
           </div>
         </div>
       </div>
       <div class="form-group">
         <div class="row">
-          <label for="location" class="col-xs-4 control-label text-right">Location:</label>
+          <label for="detected" class="col-xs-4 control-label text-right">How was it detected:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="location" placeholder="Location"/><br>
+            <select class="form-control" name="detected">
+                <option value='Flyover'>Flyover</option>
+                <option value='Singing'>Singing</option>
+                <option value='Other'>Other</option>
+            </select>
           </div>
         </div>
       </div>
       <div class="form-group">
         <div class="row">
-          <label for="date" class="col-xs-4 control-label text-right">Date:</label>
+          <label for="migrant" class="col-xs-4 control-label text-right">Migrant:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="date" placeholder="Date"/><br>
+            <select class="form-control" name="migrant">
+                <option value='No'>No</option>
+                <option value='Yes'>Yes</option>
+            </select>
+        </div>
+      </div><br>
+      <div class="form-group">
+        <div class="row">
+          <label for="nest" class="col-xs-4 control-label text-right">Did you observe a nest:</label>
+          <div class="col-xs-4">
+            <select class="form-control" name="nest">
+                <option value='No'>No</option>
+                <option value='Yes'>Yes</option>
+            </select>
           </div>
         </div>
       </div>
       <div class="form-group">
         <div class="row">
-          <label for="time" class="col-xs-4 control-label text-right">Time:</label>
+          <label for="eggs" class="col-xs-4 control-label text-right">How many eggs were in the nest:</label>
           <div class="col-xs-4">
-            <input type="text" class="form-control" name="time" placeholder="Time"/><br>
+            <input type="text" class="form-control" name="eggs" placeholder="How many eggs were in the nest (Optional)"/><br>
           </div>
         </div>
       </div>

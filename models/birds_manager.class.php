@@ -21,17 +21,18 @@ class BirdsManager{
   public function _add($bird){
     $db = new Db();
 
-    $bname = $db -> quote($bird->getbName());
+    $species = $db -> quote($bird->getSpecies());
     $gender = $db -> quote($bird->getGender());
-    $weather = $db -> quote($bird->getWeather());
-    $location = $db -> quote($bird->getLocation());
-    $date = $db -> quote($bird->getDate());
-    $time = $db -> quote($bird->getTime());
+    $distance = $db -> quote($bird->getDistance());
+    $detected = $db -> quote($bird->getDetected());
+    $migrant = $db -> quote($bird->getMigrant());
+    $nest = $db -> quote($bird->getNest());
+    $eggs = $db -> quote($bird->getEggs());
     $yname = $db -> quote($bird->getyName());
     $notes = $db -> quote($bird->getNotes());
     $uid = $db->quote($bird->getUID());
 
-    $results = $db -> query("insert into birds (bname, gender, weather, location, date, time, yname, notes, users_uid) values ($bname, $gender, $weather, $location, $date, $time, $yname, $notes, $uid);");
+    $results = $db -> query("insert into birds (species, gender, distance, detected, migrant, nest, eggs, yname, notes, users_uid) values ($species, $gender, $distance, $detected, $migrant, $nest, $eggs, $yname, $notes, $uid);");
 
   }
 }
