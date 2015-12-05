@@ -7,10 +7,19 @@
 
   $floraManager = new FloraManager();
   $arr = array();
+  var_dump($_POST);
   $arr["fname"] = isset($_POST["fname"])?$_POST["fname"]:'';
   $arr["soil"] = isset($_POST["soil"])?$_POST["soil"]:'';
-  $arr["weather"] = isset($_POST["weather"])?$_POST["weather"]:'';
-  $arr["location"] = isset($_POST["location"])?$_POST["location"]:'';
+  if(isset($_POST["geoweather"]) && $_POST["geoweather"] != ''){
+    $arr["weather"] = $_POST["geoweather"]." Current: ".$_POST['temp']." Min: ".$_POST['temp_min']." Max: ".$_POST['temp_max'];
+  } else {
+    $arr["weather"] = $_POST["weather"];
+  }
+  if(isset($_POST["geoloc"]) && $_POST["geoloc"] != ''){
+    $arr["geoloc"] = $_POST["geoloc"]." Lat: ".$_POST['lat']." Lon: ".$_POST['lon'];
+  } else {
+    $arr["geoloc"] = $_POST["location"];
+  }
   $arr["date"] = isset($_POST["date"])?$_POST["date"]:'';
   $arr["time"] = isset($_POST["time"])?$_POST["time"]:'';
   $arr["yname"] = isset($_POST["yname"])?$_POST["yname"]:'';
@@ -82,7 +91,7 @@
           <b>Location:</b>
         </div>
         <div class="col-xs-3" align=left>
-          <?= $arr['location']; ?>
+          <?= $arr['geoloc']; ?>
         </div>
         <div class="col-xs-3">
         </div>

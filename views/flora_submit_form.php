@@ -4,9 +4,9 @@
     $title = 'Colorado Flora Retriever';
 
     class selectMenu {
-        private $items;  // array of items.
-        private $options; // hold all html options
-        private $selectMenu; // final select menu
+        private $items;
+        private $options;
+        private $selectMenu;
 
         function __construct($itemArray='') {
             $this->items = $itemArray;
@@ -38,7 +38,9 @@
 
     $soilMenu = new selectMenu;
     $soilMenu->setOptions($soilArray);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,6 +72,14 @@
           </div>
         </div>
       </div>
+<?php include_once('../views/weather.php');?>
+      <input type="hidden" id="geoloc" name="geoloc" value="" />
+      <input type="hidden" id="lat" name="lat" value="" />
+      <input type="hidden" id="lon" name="lon" value="" />
+      <input type="hidden" id="geoweather" name="geoweather" value="" />
+      <input type="hidden" id="temp" name="temp" value="" />
+      <input type="hidden" id="temp_min" name="temp_min" value="" />
+      <input type="hidden" id="temp_max" name="temp_max" value="" />
       <div class="form-group">
         <div class="row">
           <label for="weather" class="col-xs-4 control-label text-right">Weather:</label>
