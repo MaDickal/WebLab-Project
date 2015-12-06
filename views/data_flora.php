@@ -20,6 +20,23 @@ function getUserEmail($arg){
     print $mail;
 }
 
+if (isset($_POST['csv'])){
+  $file = fopen("/Users/Matt/Downloads/FloraData.csv", "w");
+
+  $db = new Db();
+
+  $columns = $db->select("SHOW COLUMNS FROM flora");
+  foreach($columns as $name){
+    $names[] = $name['Field'];
+  }
+  fputcsv($file, $names);
+
+  $results = $db->select("SELECT * FROM flora");
+  foreach ($results as $result){
+    fputcsv($file, $result);
+  }
+  fclose($file);
+}
 ?>
 
 <!DOCTYPE html>
@@ -93,4 +110,7 @@ function getUserEmail($arg){
             </table>
           </div>
       </div>
-<body>
+      <form method="post" class="form-horizontal">
+        <input type="submit" value="Download CSV" name="csv" class="btn btn-success"/><br>
+      </form>
+    </body>

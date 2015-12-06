@@ -147,6 +147,15 @@ function getUserEmail($arg){
       <div class="col-xs-3">
       </div>
     </div>
+    <div class="row">
+      <div class="col-xs-3">
+      </div>
+      <div class="col-xs-6" align=center>
+        <a href="../webroot/data_formDirect.php?form=Flora" class="btn btn-info">View All Flora</a>
+      </div>
+      <div class="col-xs-3">
+      </div>
+    </div>
 </table>
 </body>
 </div>

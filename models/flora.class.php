@@ -54,8 +54,6 @@ class Flora{
     $this->setyName(isset($arr["yname"])?$arr["yname"]:'');
     $this->setNotes(isset($arr["notes"])?$arr["notes"]:'');
     $this->setUID(isset($arr["users_uid"])?$arr["users_uid"]:'');
-
-
   }
 
 }
