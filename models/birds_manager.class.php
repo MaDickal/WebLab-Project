@@ -18,6 +18,24 @@ class BirdsManager{
 
   }
 
+  public function getBird($arg){
+
+    if(!is_numeric($arg)) return FALSE;
+
+      $db = new Db();
+
+      $bid = $db -> quote($arg);
+      $results = $db -> select("SELECT * from birds where id = $bid limit 1");
+
+      foreach($results as $result){
+          $bird = new Bird();
+          $bird->Ascend($result);
+      }
+
+      return $bird;
+
+  }
+
   public function _add($bird){
     $db = new Db();
 

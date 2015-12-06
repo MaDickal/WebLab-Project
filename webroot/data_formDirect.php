@@ -14,6 +14,9 @@
     case 'view_flora':
       include('../views/data_flora_view.php');
       break;
+    case 'view_bird':
+      include('../views/data_bird_view.php');
+      break;
     default:
       include('../views/data_formSelect.php');
       break;

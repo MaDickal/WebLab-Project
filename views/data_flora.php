@@ -56,7 +56,14 @@ if (isset($_POST['csv'])){
   </script>
 </head>
 <body>
-  <h2 align=center>Flora Data</h2>
+  <div class="container">
+  <form method="post" class="form-horizontal" align="center">
+    <a href="data_formDirect.php" class="btn btn-danger pull-left">Back to Table Select</a>
+    <h2>Flora Data
+    <input type="submit" value="Download CSV" name="csv" class="btn btn-success pull-right"/>
+  </h2>
+  </form>
+</div>
   <div class="container">
       <div class="table-responsive">
         <table id="flora" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -110,7 +117,4 @@ if (isset($_POST['csv'])){
             </table>
           </div>
       </div>
-      <form method="post" class="form-horizontal">
-        <input type="submit" value="Download CSV" name="csv" class="btn btn-success"/><br>
-      </form>
     </body>

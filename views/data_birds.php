@@ -20,6 +20,23 @@ function getUserEmail($arg){
     print $mail;
 }
 
+if (isset($_POST['csv'])){
+  $file = fopen("/Users/Matt/Downloads/BirdsData.csv", "w");
+
+  $db = new Db();
+
+  $columns = $db->select("SHOW COLUMNS FROM birds");
+  foreach($columns as $name){
+    $names[] = $name['Field'];
+  }
+  fputcsv($file, $names);
+
+  $results = $db->select("SELECT * FROM birds");
+  foreach ($results as $result){
+    fputcsv($file, $result);
+  }
+  fclose($file);
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +56,14 @@ function getUserEmail($arg){
   </script>
 </head>
 <body>
-  <h2 align=center>Birds Data</h2>
+  <div class="container">
+  <form method="post" class="form-horizontal" align="center">
+    <a href="data_formDirect.php" class="btn btn-danger pull-left">Back to Table Select</a>
+    <h2>Birds Data
+    <input type="submit" value="Download CSV" name="csv" class="btn btn-success pull-right"/>
+  </h2>
+  </form>
+</div>
   <div class="container">
       <div class="table-responsive">
         <table id="birds" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -49,7 +73,7 @@ function getUserEmail($arg){
                         <th>Species</th>
                         <th>Gender</th>
                         <th>Distance</th>
-                        <th>Detected</th>
+                        <th>Detection</th>
                         <th>Migrant</th>
                         <th>Nest</th>
                         <th>Eggs</th>
@@ -65,7 +89,7 @@ function getUserEmail($arg){
                       <th>Species</th>
                       <th>Gender</th>
                       <th>Distance</th>
-                      <th>Detected</th>
+                      <th>Detection</th>
                       <th>Migrant</th>
                       <th>Nest</th>
                       <th>Eggs</th>
@@ -89,11 +113,11 @@ function getUserEmail($arg){
                       <td><?= $bird->getyName() ?></td>
                       <td><?= $bird->getNotes() ?></td>
                       <td><?= getUserEmail($bird->getUID()) ?></td>
-                      <td><a href='data_formDirect.php?form=view_bird&target=<?= $bird->getFID() ?>' class="btn btn-info">view</a></td>
+                      <td><a href='data_formDirect.php?form=view_bird&target=<?= $bird->getBID() ?>' class="btn btn-info">view</a></td>
                     </tr>
                   <?php } ?>
                 </tbody>
             </table>
           </div>
       </div>
-<body>
+    </body>
