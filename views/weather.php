@@ -1,5 +1,5 @@
-<button type='button' onclick="geoFindMe()">Use my location</button>
-<div id="out"></div>
+<button type='button' onclick="geoFindMe()" class="btn btn-success">Use my location</button>
+<div id="out"></div><br>
 
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
 <script>

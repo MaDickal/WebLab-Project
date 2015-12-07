@@ -72,7 +72,7 @@
           </div>
         </div>
       </div>
-<?php include_once('../views/weather.php');?>
+      <?php include_once('../views/weather.php');?>
       <input type="hidden" id="geoloc" name="geoloc" value="" />
       <input type="hidden" id="lat" name="lat" value="" />
       <input type="hidden" id="lon" name="lon" value="" />

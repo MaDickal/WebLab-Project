@@ -37,9 +37,8 @@ else {
       <div class="row">
         <label class="radio-inline"><input type="radio" name="form" value="Flora">Flora</label>
         <label class="radio-inline"><input type="radio" name="form" value="Birds">Birds</label>
-      </div>
+      </div><br>
       <input type="submit" value="Submit" class="btn btn-success"/>
     </div>
   </form>
-
   <a href='../webroot/user.php?action=logout' class="btn btn-danger">Log Out</a>
