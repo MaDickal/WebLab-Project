@@ -5,6 +5,8 @@ class Bird{
   private $_bid;
   private $_species;
   private $_gender;
+  private $_weather;
+  private $_location;
   private $_distance;
   private $_detected;
   private $_migrant;
@@ -22,6 +24,12 @@ class Bird{
 
   public function getGender(){return $this->_gender;}
   public function setGender($arg){$this->_gender = $arg;}
+
+  public function getWeather(){return $this->_weather;}
+  public function setWeather($arg){$this->_weather = $arg;}
+
+  public function getLocation(){return $this->_location;}
+  public function setLocation($arg){$this->_location = $arg;}
 
   public function getDistance(){return $this->_distance;}
   public function setDistance($arg){$this->_distance = $arg;}
@@ -51,6 +59,8 @@ class Bird{
     $this->setBID(isset($arr["id"])?$arr["id"]:'');
     $this->setSpecies(isset($arr["species"])?$arr["species"]:'');
     $this->setGender(isset($arr["gender"])?$arr["gender"]:'');
+    $this->setWeather(isset($arr["weather"])?$arr["weather"]:'');
+    $this->setLocation(isset($arr["geoloc"])?$arr["geoloc"]:'');
     $this->setDistance(isset($arr["distance"])?$arr["distance"]:'');
     $this->setDetected(isset($arr["detected"])?$arr["detected"]:'');
     $this->setMigrant(isset($arr["migrant"])?$arr["migrant"]:'');

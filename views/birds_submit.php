@@ -9,6 +9,16 @@
   $arr = array();
   $arr["species"] = isset($_POST["species"])?$_POST["species"]:'';
   $arr["gender"] = isset($_POST["gender"])?$_POST["gender"]:'';
+  if(isset($_POST["geoweather"]) && $_POST["geoweather"] != ''){
+    $arr["weather"] = $_POST["geoweather"]." Current: ".$_POST['temp']." Min: ".$_POST['temp_min']." Max: ".$_POST['temp_max'];
+  } else {
+    $arr["weather"] = $_POST["weather"];
+  }
+  if(isset($_POST["geoloc"]) && $_POST["geoloc"] != ''){
+    $arr["geoloc"] = $_POST["geoloc"]." Lat: ".$_POST['lat']." Lon: ".$_POST['lon'];
+  } else {
+    $arr["geoloc"] = $_POST["location"];
+  }
   $arr["distance"] = isset($_POST["distance"])?$_POST["distance"]:'';
   $arr["detected"] = isset($_POST["detected"])?$_POST["detected"]:'';
   $arr["migrant"] = isset($_POST["migrant"])?$_POST["migrant"]:'';
@@ -60,6 +70,30 @@
         </div>
         <div class="col-xs-3" align=left>
           <?= $arr['gender']; ?>
+        </div>
+        <div class="col-xs-3">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-3" align=right>
+          <b>Weather:</b>
+        </div>
+        <div class="col-xs-3" align=left>
+          <?= $arr['weather']; ?>
+        </div>
+        <div class="col-xs-3">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-3" align=right>
+          <b>Location:</b>
+        </div>
+        <div class="col-xs-3" align=left>
+          <?= $arr['geoloc']; ?>
         </div>
         <div class="col-xs-3">
         </div>

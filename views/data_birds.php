@@ -72,6 +72,8 @@ if (isset($_POST['csv'])){
                         <th>ID</th>
                         <th>Species</th>
                         <th>Gender</th>
+                        <th>Weather</th>
+                        <th>Location</th>
                         <th>Distance</th>
                         <th>Detection</th>
                         <th>Migrant</th>
@@ -88,6 +90,8 @@ if (isset($_POST['csv'])){
                       <th>ID</th>
                       <th>Species</th>
                       <th>Gender</th>
+                      <th>Weather</th>
+                      <th>Location</th>
                       <th>Distance</th>
                       <th>Detection</th>
                       <th>Migrant</th>
@@ -105,6 +109,8 @@ if (isset($_POST['csv'])){
                       <td><?= $bird->getBID() ?></td>
                       <td><?= $bird->getSpecies() ?></td>
                       <td><?= $bird->getGender() ?></td>
+                      <td><?= $bird->getWeather() ?></td>
+                      <td><?= $bird->getLocation() ?></td>
                       <td><?= $bird->getDistance() ?></td>
                       <td><?= $bird->getDetected() ?></td>
                       <td><?= $bird->getMigrant() ?></td>

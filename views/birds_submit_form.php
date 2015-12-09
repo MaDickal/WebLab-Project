@@ -70,6 +70,30 @@
           </div>
         </div>
       </div>
+      <?php include_once('../views/weather.php');?>
+      <input type="hidden" id="geoloc" name="geoloc" value="" />
+      <input type="hidden" id="lat" name="lat" value="" />
+      <input type="hidden" id="lon" name="lon" value="" />
+      <input type="hidden" id="geoweather" name="geoweather" value="" />
+      <input type="hidden" id="temp" name="temp" value="" />
+      <input type="hidden" id="temp_min" name="temp_min" value="" />
+      <input type="hidden" id="temp_max" name="temp_max" value="" />
+      <div class="form-group">
+        <div class="row">
+          <label for="weather" class="col-xs-4 control-label text-right">Weather:</label>
+          <div class="col-xs-4">
+            <input type="text" class="form-control" name="weather" placeholder="Weather"/><br>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label for="location" class="col-xs-4 control-label text-right">Location:</label>
+          <div class="col-xs-4">
+            <input type="text" class="form-control" name="location" placeholder="Location"/><br>
+          </div>
+        </div>
+      </div>
       <div class="form-group">
         <div class="row">
           <label for="distance" class="col-xs-4 control-label text-right">Distance:</label>

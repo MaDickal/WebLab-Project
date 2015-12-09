@@ -67,6 +67,30 @@ function getUserEmail($arg){
     <div class="col-xs-3">
     </div>
     <div class="col-xs-3" align=right>
+      <b>Weather:</b>
+    </div>
+    <div class="col-xs-3" align=left>
+      <?= $bird->getWeather() ?>
+    </div>
+    <div class="col-xs-3">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-3" align=right>
+      <b>Location:</b>
+    </div>
+    <div class="col-xs-3" align=left>
+      <?= $bird->getLocation() ?>
+    </div>
+    <div class="col-xs-3">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-3" align=right>
       <b>Distance:</b>
     </div>
     <div class="col-xs-3" align=left>

@@ -41,6 +41,8 @@ class BirdsManager{
 
     $species = $db -> quote($bird->getSpecies());
     $gender = $db -> quote($bird->getGender());
+    $weather = $db -> quote($bird->getWeather());
+    $location = $db -> quote($bird->getLocation());
     $distance = $db -> quote($bird->getDistance());
     $detected = $db -> quote($bird->getDetected());
     $migrant = $db -> quote($bird->getMigrant());
@@ -50,7 +52,7 @@ class BirdsManager{
     $notes = $db -> quote($bird->getNotes());
     $uid = $db->quote($bird->getUID());
 
-    $results = $db -> query("insert into birds (species, gender, distance, detected, migrant, nest, eggs, yname, notes, users_uid) values ($species, $gender, $distance, $detected, $migrant, $nest, $eggs, $yname, $notes, $uid);");
+    $results = $db -> query("insert into birds (species, gender, weather, location, distance, detected, migrant, nest, eggs, yname, notes, users_uid) values ($species, $gender, $weather, $location, $distance, $detected, $migrant, $nest, $eggs, $yname, $notes, $uid);");
 
   }
 }
