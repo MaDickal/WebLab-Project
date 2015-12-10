@@ -14,8 +14,8 @@ class BirdsManager{
         $bird->Ascend($result);
         $birds[] = $bird;
       }
-      return $birds;
 
+      return $birds;
   }
 
   public function getBird($arg){

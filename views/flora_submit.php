@@ -16,9 +16,9 @@
     $arr["weather"] = $_POST["weather"];
   }
   if(isset($_POST["geoloc"]) && $_POST["geoloc"] != ''){
-    $arr["geoloc"] = $_POST["geoloc"]." Lat: ".$_POST['lat']." Lon: ".$_POST['lon'];
+    $arr["location"] = $_POST["geoloc"]." Lat: ".$_POST['lat']." Lon: ".$_POST['lon'];
   } else {
-    $arr["geoloc"] = $_POST["location"];
+    $arr["location"] = $_POST["location"];
   }
   $arr["date"] = isset($_POST["date"])?$_POST["date"]:'';
   $arr["time"] = isset($_POST["time"])?$_POST["time"]:'';
@@ -91,7 +91,7 @@
           <b>Location:</b>
         </div>
         <div class="col-xs-3" align=left>
-          <?= $arr['geoloc']; ?>
+          <?= $arr['location']; ?>
         </div>
         <div class="col-xs-3">
         </div>

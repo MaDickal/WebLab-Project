@@ -48,7 +48,7 @@ class Flora{
     $this->setfName(isset($arr["fname"])?$arr["fname"]:'');
     $this->setSoil(isset($arr["soil"])?$arr["soil"]:'');
     $this->setWeather(isset($arr["weather"])?$arr["weather"]:'');
-    $this->setLocation(isset($arr["geoloc"])?$arr["geoloc"]:'');
+    $this->setLocation(isset($arr["location"])?$arr["location"]:'');
     $this->setDate(isset($arr["date"])?$arr["date"]:'');
     $this->setTime(isset($arr["time"])?$arr["time"]:'');
     $this->setyName(isset($arr["yname"])?$arr["yname"]:'');

@@ -60,7 +60,7 @@ class Bird{
     $this->setSpecies(isset($arr["species"])?$arr["species"]:'');
     $this->setGender(isset($arr["gender"])?$arr["gender"]:'');
     $this->setWeather(isset($arr["weather"])?$arr["weather"]:'');
-    $this->setLocation(isset($arr["geoloc"])?$arr["geoloc"]:'');
+    $this->setLocation(isset($arr["location"])?$arr["location"]:'');
     $this->setDistance(isset($arr["distance"])?$arr["distance"]:'');
     $this->setDetected(isset($arr["detected"])?$arr["detected"]:'');
     $this->setMigrant(isset($arr["migrant"])?$arr["migrant"]:'');
