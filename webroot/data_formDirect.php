@@ -37,25 +37,31 @@ else {
           case 'Flora':
             include('../views/data_flora.php');
             break;
+
           case 'Birds':
             include('../views/data_birds.php');
             break;
+
           case 'view_flora':
             include('../views/data_flora_view.php');
             break;
+
           case 'view_bird':
             include('../views/data_bird_view.php');
             break;
+
           case 'edit_flora':
             $floraManager = new FloraManager();
             $plant = $floraManager->getFlora($target);
             include('../views/flora_edit.php');
             break;
+
           case 'edit_bird':
             $birdsManager = new BirdsManager();
             $bird = $birdsManager->getBird($target);
             include('../views/bird_edit.php');
             break;
+
           case 'save_flora':
             $floraManager = new FloraManager();
             $arr = array();
@@ -82,6 +88,7 @@ else {
             $floraManager->_update($plant);
             include('../views/flora_saved.php');
             break;
+
           case 'save_bird':
             $birdsManager = new BirdsManager();
             $arr = array();
@@ -111,6 +118,19 @@ else {
             $birdsManager->_update($bird);
             include('../views/bird_saved.php');
             break;
+
+          case 'delete_flora':
+            $floraManager = new FloraManager();
+            $floraManager->delete($target);
+            include('../views/flora_delete.php');
+            break;
+
+          case 'delete_bird':
+            $birdsManager = new BirdsManager();
+            $birdsManager->delete($target);
+            include('../views/bird_delete.php');
+            break;
+
           default:
             include('../views/data_formSelect.php');
             break;

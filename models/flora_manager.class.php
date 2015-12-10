@@ -70,4 +70,15 @@ class FloraManager{
     $results = $db -> query("insert into flora (fname, soil, weather, location, date, time, yname, notes, users_uid) values ($fname, $soil, $weather, $location, $date, $time, $yname, $notes, $uid);");
 
   }
+
+  public function delete($arg){
+
+    if(!is_numeric($arg)) return FALSE;
+
+      $db = new Db();
+
+      $id = $db -> quote($arg);
+      $results = $db -> query("DELETE from flora where id = $id");
+  }
+
 }

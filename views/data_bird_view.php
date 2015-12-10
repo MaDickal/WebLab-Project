@@ -176,6 +176,6 @@ function getUserEmail($arg){
       </table>
       <br>
         <a href='../webroot/data_formDirect.php?action=edit_bird&target=<?= $bird->getBID() ?>' class="btn btn-warning">Edit This Submit</a>
-        <a href='../webroot/data_formDirect.php?action=edit_bird&target=<?= $bird->getBID() ?>' class="btn btn-danger">Delete This Submit</a>
+        <a href='../webroot/data_formDirect.php?action=delete_bird&target=<?= $bird->getBID() ?>' class="btn btn-danger">Delete This Submit</a>
         <br>
         <a href='../webroot/data_formDirect.php?action=Birds' class="btn btn-primary">View All Flora</a>

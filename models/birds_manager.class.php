@@ -76,4 +76,15 @@ class BirdsManager{
     $results = $db -> query("insert into birds (species, gender, weather, location, distance, detected, migrant, nest, eggs, yname, notes, users_uid) values ($species, $gender, $weather, $location, $distance, $detected, $migrant, $nest, $eggs, $yname, $notes, $uid);");
 
   }
+
+  public function delete($arg){
+
+    if(!is_numeric($arg)) return FALSE;
+
+      $db = new Db();
+
+      $id = $db -> quote($arg);
+      $results = $db -> query("DELETE from birds where id = $id");
+  }
+
 }

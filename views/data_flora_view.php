@@ -152,6 +152,6 @@ function getUserEmail($arg){
       </table>
       <br>
         <a href='../webroot/data_formDirect.php?action=edit_flora&target=<?= $plant->getFID() ?>' class="btn btn-warning">Edit This Submit</a>
-        <a href='../webroot/data_formDirect.php?action=edit_flora&target=<?= $plant->getFID() ?>' class="btn btn-danger">Delete This Submit</a>
+        <a href='../webroot/data_formDirect.php?action=delete_flora&target=<?= $plant->getFID() ?>' class="btn btn-danger">Delete This Submit</a>
         <br>
         <a href='../webroot/data_formDirect.php?action=Flora' class="btn btn-primary">View All Flora</a>
