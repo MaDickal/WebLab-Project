@@ -18,6 +18,27 @@ class BirdsManager{
       return $birds;
   }
 
+  public function _update($arg){
+    $db = new Db();
+
+    $id = $db -> quote($arg->getBID());
+    $species = $db -> quote($arg->getSpecies());
+    $gender = $db -> quote($arg->getGender());
+    $weather = $db -> quote($arg->getWeather());
+    $location = $db -> quote($arg->getLocation());
+    $distance = $db -> quote($arg->getDistance());
+    $detected = $db -> quote($arg->getDetected());
+    $migrant = $db -> quote($arg->getMigrant());
+    $nest = $db -> quote($arg->getNest());
+    $eggs = $db -> quote($arg->getEggs());
+    $yname = $db -> quote($arg->getyName());
+    $notes = $db -> quote($arg->getNotes());
+    $uid = $db->quote($arg->getUID());
+
+    $results = $db -> query("UPDATE birds SET `id` = $id, `species` = $species, `gender` = $gender, `weather` = $weather, `location` = $location, `distance` = $distance, `detected` = $detected, `migrant` = $migrant, `nest` = $nest, `eggs` = $eggs, `yname` = $yname, `notes` = $notes, `users_uid` = $uid WHERE `id` = $id AND `users_uid` = $uid;");
+
+  }
+
   public function getBird($arg){
 
     if(!is_numeric($arg)) return FALSE;

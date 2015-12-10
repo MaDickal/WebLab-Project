@@ -110,7 +110,7 @@ if (isset($_POST['csv'])){
                       <td><?= $plant->getyName() ?></td>
                       <td><?= $plant->getNotes() ?></td>
                       <td><?= getUserEmail($plant->getUID()) ?></td>
-                      <td><a href='data_formDirect.php?form=view_flora&target=<?= $plant->getFID() ?>' class="btn btn-info">view</a></td>
+                      <td><a href='data_formDirect.php?action=view_flora&target=<?= $plant->getFID() ?>' class="btn btn-info">view</a></td>
                     </tr>
                   <?php } ?>
                 </tbody>

@@ -7,7 +7,6 @@
 
   $floraManager = new FloraManager();
   $arr = array();
-  var_dump($_POST);
   $arr["fname"] = isset($_POST["fname"])?$_POST["fname"]:'';
   $arr["soil"] = isset($_POST["soil"])?$_POST["soil"]:'';
   if(isset($_POST["geoweather"]) && $_POST["geoweather"] != ''){

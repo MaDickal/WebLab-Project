@@ -18,6 +18,24 @@ class FloraManager{
 
   }
 
+  public function _update($arg){
+    $db = new Db();
+
+    $id = $db -> quote($arg->getFID());
+    $fname = $db -> quote($arg->getfName());
+    $soil = $db -> quote($arg->getSoil());
+    $weather = $db -> quote($arg->getWeather());
+    $location = $db -> quote($arg->getLocation());
+    $date = $db -> quote($arg->getDate());
+    $time = $db -> quote($arg->getTime());
+    $yname = $db -> quote($arg->getyName());
+    $notes = $db -> quote($arg->getNotes());
+    $uid = $db->quote($arg->getUID());
+
+    $results = $db -> query("UPDATE flora SET `id` = $id, `fname` = $fname, `soil` = $soil, `weather` = $weather, `location` = $location, `date` = $date, `time` = $time, `yname` = $yname, `notes` = $notes, `users_uid` = $uid WHERE `id` = $id AND `users_uid` = $uid;");
+
+  }
+
   public function getFlora($arg){
 
     if(!is_numeric($arg)) return FALSE;

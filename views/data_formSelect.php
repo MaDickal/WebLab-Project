@@ -35,8 +35,8 @@ else {
   <form action="../webroot/data_formDirect.php" method="get" class="form-horizontal">
     <div class="form-group">
       <div class="row">
-        <label class="radio-inline"><input type="radio" name="form" value="Flora">Flora</label>
-        <label class="radio-inline"><input type="radio" name="form" value="Birds">Birds</label>
+        <label class="radio-inline"><input type="radio" name="action" value="Flora">Flora</label>
+        <label class="radio-inline"><input type="radio" name="action" value="Birds">Birds</label>
       </div>
       <input type="submit" value="Submit" class="btn btn-success"/>
     </div>

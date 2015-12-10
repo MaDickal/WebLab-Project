@@ -119,7 +119,7 @@ if (isset($_POST['csv'])){
                       <td><?= $bird->getyName() ?></td>
                       <td><?= $bird->getNotes() ?></td>
                       <td><?= getUserEmail($bird->getUID()) ?></td>
-                      <td><a href='data_formDirect.php?form=view_bird&target=<?= $bird->getBID() ?>' class="btn btn-info">view</a></td>
+                      <td><a href='data_formDirect.php?action=view_bird&target=<?= $bird->getBID() ?>' class="btn btn-info">view</a></td>
                     </tr>
                   <?php } ?>
                 </tbody>
